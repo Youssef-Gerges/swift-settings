@@ -15,4 +15,16 @@ class SwiftSettingsServiceProvider extends ServiceProvider
         ], 'laravel-assets');
     }
 
+    public function register()
+    {
+        $this->app->singleton('swift-settings', function ($app) {
+            return new SwiftSettings();
+        });
+
+        if (file_exists(__DIR__ . '/helpers.php')) {
+            require_once __DIR__ . '/helpers.php';
+        }
+    }
+
+
 }

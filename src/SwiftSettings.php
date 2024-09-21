@@ -7,7 +7,7 @@ use LaravelDaddy\SwiftSettings\App\Models\Setting;
 
 class SwiftSettings
 {
-    public static function setSetting(string $key, string $value)
+    public function setSetting(string $key, string $value)
     {
         try {
             $settings = Setting::updateOrCreate(['key' => $key], ['value' => $value]);
@@ -18,7 +18,7 @@ class SwiftSettings
         }
     }
 
-    public static function getSetting(string $key, $default = null){
+    public function getSetting(string $key, $default = null){
         return Cache::rememberForever('swift_settings_'.$key, function() use ($key, $default){
             $setting = Setting::where('key', $key)->first();
             if($setting){

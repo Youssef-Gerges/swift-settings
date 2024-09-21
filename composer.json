@@ -25,7 +25,10 @@
         "laravel": {
             "providers": [
                 "LaravelDaddy\\SwiftSettings\\SwiftSettingsServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "SwiftSettings": "LaravelDady\\SwiftSettings\\Facades\\SwiftSettingsFacade"
+            }
         }
     }
 }
