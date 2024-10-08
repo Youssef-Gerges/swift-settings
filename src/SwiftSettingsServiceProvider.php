@@ -12,7 +12,7 @@ class SwiftSettingsServiceProvider extends ServiceProvider
     {
         $this->publishesMigrations([
             __DIR__ . '/database/migrations' => database_path('migrations')
-        ], 'laravel-assets');
+        ], 'migrations');
     }
 
     public function register()
